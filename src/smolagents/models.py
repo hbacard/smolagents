@@ -1462,7 +1462,7 @@ class OpenAIServerModel(ApiModel):
         project: str | None = None,
         client_kwargs: dict[str, Any] | None = None,
         custom_role_conversions: dict[str, str] | None = None,
-        flatten_messages_as_text: bool = False,
+        flatten_messages_as_text: bool = True, # Was False before but custom vLLM deployed model raise error
         **kwargs,
     ):
         self.client_kwargs = {
